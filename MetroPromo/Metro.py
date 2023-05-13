@@ -11,19 +11,19 @@ def metro(driver, url):
     try: 
         price = driver.find_element(By.XPATH, "//table[@class='table table-striped table-condensed']//tr[last()]//td//div//div[last()]//span")
         save_to_excel(title.text, price.text)
-        driver.close()
+        exit(0)
     except:
         pass
     try:
         price = driver.find_element(By.XPATH, "//span[@class='mfcss_article-detail--price-breakdown primary promotion']//span//span")
         save_to_excel(title.text, price.text)
-        driver.quit()
+        exit(0)
     except:
         pass
     try:
         price = driver.find_element(By.XPATH, "//span[@class='mfcss_article-detail--price-breakdown primary']//span//span")
         save_to_excel(title.text, price.text)
-        driver.quit()
+        exit(0)
     except:
         pass
     driver.quit()
